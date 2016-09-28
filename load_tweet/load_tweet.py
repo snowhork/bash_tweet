@@ -6,12 +6,7 @@ import dicts_writer
 
 import pytter.pytter as pytter
 
-if __name__ == '__main__':
-#    argc = len(sys.argv)
-#    if argc < 2:
-#        exit()
-#    text = sys.argv[1]
-
+def main():
     api = pytter.create_api()
     timeline = api.home_timeline()
 
@@ -25,4 +20,11 @@ if __name__ == '__main__':
         row['created_at'] = status.created_at
         rows.append(row)
 
-    writer.write_rows(rows)
+    writer.write_rows(rows)    
+
+if __name__ == '__main__':
+#    argc = len(sys.argv)
+#    if argc < 2:
+#        exit()
+#    text = sys.argv[1]
+    main()
