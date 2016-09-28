@@ -13,4 +13,5 @@ function _post_tweet() {
 alias tw='_post_tweet'
 
 ## NOTE
+
 pytterは自作ライブラリで、ただ単にtweepyを用いてAPIを叩けるようにしてるだけで隠蔽しているだけ。
