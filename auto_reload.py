@@ -14,14 +14,14 @@ VAR = 15
 
 def main():
     def stdout_clean():
-        sys.stdout.write("             \n")
+        sys.stdout.write("\r                    ")
         sys.stdout.flush()
     
     while True:
         sys.stdout.flush()
         idle_time = int(np.random.normal(MEAN, VAR))
         load_tweet.main()
-        display_tweet.main()
+#        display_tweet.main()
 
         t = 0
         while t < idle_time:

@@ -1,26 +1,31 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
 import sys
-import dicts_writer
+import pickle
 
+import dicts_writer
 import pytter.pytter as pytter
+import display_tweet.display_tweet as display
+
+def pkl_name(id):
+    return str(id) + '.pickle'
 
 def main():
     api = pytter.create_api()
     timeline = api.home_timeline()
 
-    writer = dicts_writer.dicts_writer('.')
-    rows = []
+    pkl_output = 'status_pickles/'
     
     for status in timeline:
-        row = {}
-        row['text'] = status.text.encode('utf-8')
-        row['author_name'] = status.author.name.encode('utf-8')
-        row['created_at'] = status.created_at
-        rows.append(row)
+        id = status.id
 
-    writer.write_rows(rows)    
+        pkl_path = os.path.join(pkl_output, pkl_name(id))
+        if not os.path.exists(pkl_path):
+            with open(pkl_path, mode='wb') as f:
+                pickle.dump(status, f)
+            display.display_status(status)
 
 if __name__ == '__main__':
 #    argc = len(sys.argv)

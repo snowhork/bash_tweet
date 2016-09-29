@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
+import pickle
 
 BLUE = '\033[94m'
 GREEN = '\033[92m'
@@ -11,6 +12,21 @@ ENDC = '\033[0m'
 
 INDENT_NUM = 5
 
+def process_text(text):
+    return text.replace('\n', '\n'+indent())
+
+def display_status(status):
+    text = process_text(status.text)
+    author_name = status.author.name
+
+    print GREEN + '(' +  author_name + ')' + YELLOW + '-> ' + ENDC
+    print indent() + text
+
+def display_pkl(pkl_path):
+    with open(pkl_path, mode='rb') as f:
+        status = pickle.path(f)
+    display_status(status)
+        
 def indent():
     return ' '*INDENT_NUM
 
