@@ -26,7 +26,7 @@ def display_pkl(pkl_path):
     with open(pkl_path, mode='rb') as f:
         status = pickle.path(f)
     display_status(status)
-        
+
 def indent():
     return ' '*INDENT_NUM
 

@@ -14,7 +14,7 @@ VAR = 15
 
 def main():
     def stdout_clean():
-        sys.stdout.write("\r                    ")
+        sys.stdout.write("\r                    \n")
         sys.stdout.flush()
     
     while True:
