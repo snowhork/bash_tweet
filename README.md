@@ -17,7 +17,7 @@ alias tw='_post_tweet'
 
 http://kivantium.hateblo.jp/entry/2015/01/03/000225
 
-*↑を参考にaccess tokenを登録する
+* urlを参考にaccess tokenを登録する
 
 * pytter.pyを以下のように作り、PYTHONPATHを通しておく。
 ```python
