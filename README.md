@@ -6,14 +6,13 @@
 ## alias for .bashrc
 
 ターミナル上で、twでツイートしたい人は.bashrcか.bash_profileに以下を書き加える
-
+```bash
 function _post_tweet() {
     python post_tweet.py $1
     
 }
-
 alias tw='_post_tweet'
-
+```
 ## NOTE
 
 http://kivantium.hateblo.jp/entry/2015/01/03/000225
@@ -21,8 +20,8 @@ http://kivantium.hateblo.jp/entry/2015/01/03/000225
 1.↑を参考にaccess tokenを登録する
 
 2. pytter.pyを以下のように作り、PYTHONPATHを通しておく。
-
---- pytteer.py---
+```python
+#--- pytteer.py---
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
@@ -39,5 +38,4 @@ def create_api():
     auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 
     return tweepy.API(auth)
-
-
+```
